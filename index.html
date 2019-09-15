@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!--Navigation Start-->
+    <div class="sidebar">
+    <nav id="navbar" class="navbar">
+      <!--Navigation Header-->
+      <header class="nav-header" onclick="topFunction()">
+        <p class="hidden">GIT Essentials</p>
+        <img src="assets/logo.svg" alt="Logo" class="nav-logo">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+      </header>
+
+      <!--Navigation List-->
+      <ul id="navlink" class="navlink">
+        <li><a href="#git_config" class="nav-link">git config</a></li>
+        <li><a href="#git_init" class="nav-link">git init</a></li>
+        <li><a href="#git_clone" class="nav-link">git clone</a></li>
+        <li><a href="#git_add" class="nav-link">git add</a></li>
+        <li><a href="#git_commit" class="nav-link">git commit</a></li>
+        <li><a href="#git_diff" class="nav-link">git diff</a></li>
+        <li><a href="#git_reset" class="nav-link">git reset</a></li>
+        <li><a href="#git_status" class="nav-link">git status</a></li>
+        <li><a href="#git_rm" class="nav-link">git rm</a></li>
+        <li><a href="#git_tag" class="nav-link">git tag</a></li>
+        <li><a href="#git_branch" class="nav-link">git branch</a></li>
+        <li><a href="#git_checkout" class="nav-link">git checkout</a></li>
+        <li><a href="#git_merge" class="nav-link">git merge</a></li>
+        <li><a href="#git_remote" class="nav-link">git remote</a></li>
+        <li><a href="#git_push" class="nav-link">git push</a></li>
+        <li><a href="#git_pull" class="nav-link">git pull</a></li>
+        <li><a href="#git_stash" class="nav-link">git stash</a></li>
+        <li><a href="#references" class="nav-link">references</a></li>
+      </ul>
+    </nav>
+  </div>
+    <!--Main Section Start-->
+    <main id="main-doc" class="content">
+      <section class="main-section" id="git_config">
+        <header>
+        git config
+        </header>
+        <p>Name usage:</p>
+        <code>
+          git config –global user.name “[name]”
+        </code>
+        <p>Email usage:</p>
+        <code>git config –global user.email “[email address]”</code>
+        <p>
+          This command sets the author name and email address respectively to be
+          used with your commits.
+        </p>
+        <code>
+          username@branch:~$ git config --global user.name "[name]"<br />
+          username@branch:~$ git config --global user.email "[email]"
+        </code>
+      </section>
+
+      <section class="main-section" id="git_init">
+        <header>
+        git init
+        </header>
+        <p>Usage:</p>
+        <code>
+          git init [repository name]
+        </code>
+        <p>This command is used to start a new repository.</p>
+        <code>
+          username@branch:~$ git init /home/user/Documents/Repos<br />
+          Initialized empty Git repository in /home/edureka/Documents/Demo/.git/
+        </code>
+      </section>
+
+      <section class="main-section" id="git_clone">
+        <header>
+        git clone
+        </header>
+        <p>Usage:</p>
+        <code>git clone [url]</code>
+        <p>This command is used to obtain a repository from an existing URL.</p>
+        <code>
+          username@branch:~$ git clone
+          https://github.com/mdnzi/FCC-Technical-Documentation-Page.git<br />
+          Cloning into 'TechnicalDocumentationPage'<br />
+          remote: Counting objects: 8, done.<br />
+          remote: Compressing objects: 100% (5/5). done.<br />
+          remote: Total 8 (delta 5), reused 8 (delta 5), pack-reusedd 0<br />
+          Unpacking objects: 100% (8/8), done.
+        </code>
+      </section>
+
+      <section class="main-section" id="git_add">
+        <header>
+        git add
+        </header>
+        <p>Usage:</p>
+        <code>
+          git add [file]
+        </code>
+        <p>This command adds a file to the staging area.</p>
+        <code>
+          username@branch:~/Documents/Repos$ git add index.html
+        </code>
+        <p>Usage:</p>
+        <code>
+          git add *
+        </code>
+        <p>This command adds one or more to the staging area.</p>
+        <code>
+          username@branch:~/Documents/Repos$ git add *
+        </code>
+      </section>
+
+      <section class="main-section" id="git_commit">
+        <header>
+          git commit
+        </header>
+        <p>Usage:</p>
+        <code>
+          git commit -m “[ Type in the commit message]”
+        </code>
+        <p>
+          This command records or snapshots the file permanently in the version
+          history.
+        </p>
+        <code>
+          username@branch:~/Documents/Repos git commit -m "Initial Commit"<br />
+          [master (root-commit) aff3269] First Commit<br />
+          2 files changed, 300 insertions(+)<br />
+          create mode 100644 TechnicalDocumentationPage/index.html<br />
+          create mode 100644 TechnicalDocumentationPage/style/main.css
+        </code>
+        <p>Usage:</p>
+        <code>
+          git commit -a
+        </code>
+        <p>
+          This command commits any files you’ve added with the git add command
+          and also commits any files you’ve changed since then.
+        </p>
+        <code>
+          username@branch:~/Documents/Repos$ git commit -a<br />
+          On branch master<br />
+          nothing to commit, working tree clean
+        </code>
+      </section>
+
+      <section class="main-section" id="git_diff">
+        <header>
+          git diff
+        </header>
+        <p>Usage:</p>
+        <code>
+          git diff
+        </code>
+        <p>This command shows the file differences which are not yet staged.</p>
+        <code>
+          username@branch:~Documents/Repos$ git diff<br />
+          diff --git a/TechnicalDocumentationPage/index.html
+          b/TechnicalDocumentationPage/index.html<br />
+          index 8a985d9..94cfa0f 100644<br />
+          --- a/TechnicalDocumentationPage/index.html<br />
+          +++ b/TechnicalDocumentationPage/index.html<br />
+          @@ -20,8 +20,8 @@<br />
+          &lt;/div&gt;<br />
+          &lt;div class="content&gt;<br />
+          &lt;div class="success">Success!&lt;/div&gt;<br />
+          &lt;div class="description line-1&gt;AWS DevOps Project has been
+          successfully setup&lt;/div&gt;<br />
+          &lt;div class="description line-2&gt;Your HTML app is up and running
+          on AWS&lt;/div&gt;<br />
+          &lt;div class="description line-1&gt;Azure DevOps Project has been
+          successfully setup&lt;/div&gt;<br />
+          &lt;div class="description line-1&gt;Your HTML app is up and running
+          on Azure&lt;/div&gt;<br />
+          &lt;div class="next-steps"&gt;<br />
+          &lt;div class="header>Next&lt;/div&gt;<br />
+          &lt;div class="body&gt;
+        </code>
+      </section>
+
+      <section class="main-section" id="git_reset">
+        <header>
+          git reset
+        </header>
+        <p>Usage:</p>
+        <code>
+          git reset [file]
+        </code>
+        <p>
+          This command unstages the file, but it preserves the file contents.
+        </p>
+        <code>
+          username@branch:~/Documents/Repos/TechnicalDocumentationPage/style$
+          git reset main.css<br />
+          Unstaged changes after reset:<br />
+          M TechnicalDocumentationPage/style/main.css<br />
+          M TechnicalDocumentationPage/index.html
+        </code>
+        <p>Usage:</p>
+        <code>git reset [commit]</code>
+        <p>
+          This command undoes all the commits after the specified commit and
+          preserves the changes locally.
+        </p>
+        <code>
+          username@branch:~/Documents/Repos$ git reset
+          09bb8e3f996eaf9a68ac5ba9d9b9fceb0e8541e7<br />
+          Unstaged changes after reset:<br />
+          M TechnicalDocumentationPage/style/main.css M
+          TechnicalDocumentationPage/index.html
+        </code>
+        <p>Usage:</p>
+        <code>
+          git reset –hard [commit]
+        </code>
+        <p>
+          This command discards all history and goes back to the specified
+          commit.
+        </p>
+        <code>
+          username@branch:~/Documents/Repos$ git reset --hard
+          b01557d80d5f53dcf0ebdde4d3f8b0d20db9b9c16<br />
+          HEAD is not at b01557d Changes made in HTML file
+        </code>
+      </section>
+
+      <section class="main-section" id="git_status">
+        <header>
+          git status
+        </header>
+        <p>Usage:</p>
+        <code>
+            git status
+        </code>
+        <p>This command lists all the files that have to be committed.</p>
+        <code>
+            username@branch:~/Documents/DEMOS$ git status<br>
+            On branch master<br>
+            Changes not staged for commit:<br>
+            (use "git add <file>..." to update what will be commited)<br>
+            (use "git checkout -- <file>..." to discard changes in working directory)<br>
+            modified:   TechnicalDocumentationPage/style/main.css<br>
+            modified:   TechnicalDocumentationPage/index.html<br>
+            no changes added to commit (use "git add" and/or "git commit -a")
+        </code>
+      </section>
+
+      <section class="main-section" id="git_rm">
+        <header>
+          git rm
+        </header>
+        <p>Usage:</p>
+        <code>
+            git rm [file]
+        </code>
+        <p>This command deletes the file from your working directory and stages the deletion.</p>
+        <code>
+            username@branch:~/Documents/Repos/TechnicalDocumentationPage$ git rm example.txt<br>
+            rm 'TechnicalDocumentationPage/example.txt'
+        </code>
+      </section>
+
+      <section class="main-section" id="git_tag">
+        <header>
+          git tag
+        </header>
+        <p>Usage:</p>
+        <code>
+            Usage: git tag [commitID]
+        </code>
+        <p>This command is used to give tags to the specified commit.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git tag b01557d80d5f3dcf0ebdde4d3fb0d20d9b9c16<br>
+            username@branch:~/Documents/Repos$ git tag<br>
+            a826d86f183838ae59775fe5a91cbe9023ff3d<br>
+            b01557d80d5f3dcf0ebdde4d3fb0d20d9b9c16
+        </code>
+      </section>
+
+      <section class="main-section" id="git_branch">
+        <header>
+          git branch
+        </header>
+        <p>Usage:</p>
+        <code>
+            git branch
+        </code>
+        <p>This command lists all the local branches in the current repository.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git branch<br>
+            * master
+        </code>
+        <p>Usage:</p>
+        <code>
+          git branch [branch name]
+        </code>
+        <p>This command creates a new branch.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git branch branch_1
+        </code>
+        <p>Usage:</p>
+        <code>
+          git branch -d [branch name]
+        </code>
+        <p>This command deletes the feature branch.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git branch -d branch_1<br>
+            Deleted branch branch_1 (was be040cc).
+        </code>
+      </section>
+
+      <section class="main-section" id="git_checkout">
+        <header>
+          git checkout
+        </header>
+        <p>Usage:</p>
+        <code>
+            git checkout [branch name]
+        </code>
+        <p>This command is used to switch from one branch to another.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git checkout branch_2<br>
+            Switched to branch 'branch_2'
+        </code>
+        <p>Usage:</p>
+        <code>git checkout -b [branch name]</code>
+        <p>This command creates a new branch and also switches to it.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git checkout -b branch_4<br>
+            Switched to a new branch 'branch_4'
+        </code>
+      </section>
+
+      <section class="main-section" id="git_merge">
+        <header>
+          git merge
+        </header>
+        <p>Usage:</p>
+        <code>
+            git merge [branch name]
+        </code>
+        <p>This command merges the specified branch’s history into the current branch.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git merge branch_2<br>
+            Merge made by the 'recursive' strategy<br>
+                TechnicalDocumentationPage/index.html | 2+-<br>
+                1 file changed, 1 insertion(+), 1 deletion (-)
+        </code>
+      </section>
+      
+      <section class="main-section" id="git_remote">
+        <header>
+          git remote
+        </header>
+        <p>Usage:</p>
+        <code>
+            git remote add [variable name][remote server link]
+        </code>
+        <p>This command is used to connect your local repository to the remote server.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git remote add origin https://github.com/mdnzi/FCC-Technical-Documentation-Page.git
+        </code>
+      </section>
+      
+      <section class="main-section" id="git_push">
+        <header>
+          git push
+        </header>
+        <p>Usage:</p>
+        <code>
+            git push [variable name] master
+        </code>
+        <p>This command sends the committed changes of master branch to your remote repository.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git push origin master<br>
+            Username for 'http://github.com': mdnzi<br>
+            Password for 'https://mdnzi@github.com';<br>
+            Counting objects: 8, done.<br>
+            Delta compression using up to 2 threads.<br>
+            Compressing objects: 100%(5/5), done.<br>
+            Writing objects: 100% (8/8), 235.20 KiB | 1.21 MiB/s, done.<br>
+            Total 8 (delta 9), reused 0 (delta 0)<br>
+            remote: Resolving deltas: 100% (9/9), done.<br>
+            To https://github.com/mdnzi/FCC-Technical-Documentation-Page.git<br>
+            *[new branch]       master->master
+        </code>
+        <p>Usage:</p>
+        <code>
+            git push [variable name][branch]
+        </code>
+        <p>This command sends the branch commits to your remote repository.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git push origin master<br>
+            Username for 'http://github.com': mdnzi<br>
+            Password for 'https://mdnzi@github.com';<br>
+            Counting objects: 8, done.<br>
+            Delta compression using up to 2 threads.<br>
+            Compressing objects: 100%(5/5), done.<br>
+            Writing objects: 100% (8/8), 235.20 KiB | 1.21 MiB/s, done.<br>
+            Total 8 (delta 9), reused 0 (delta 0)<br>
+            remote: Resolving deltas: 100% (9/9), done.<br>
+            To https://github.com/mdnzi/FCC-Technical-Documentation-Page.git<br>
+            *[new branch]       master->master
+        </code>
+        <p>Usage:</p>
+        <code>
+            git push –all [variable name]
+        </code>
+        <p>This command pushes all branches to your remote repository.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git push --all origin<br>
+            Username for 'http://github.com': mdnzi<br>
+            Password for 'https://mdnzi@github.com';<br>
+            Total 8 (delta 9), reused 0 (delta 0)<br>
+            To https://github.com/mdnzi/FCC-Technical-Documentation-Page.git<br>
+            *[new branch]       branch_3->branch_3
+        </code>
+        <p>Usage:</p>
+        <code>
+            git push [variable name] :[branch name]
+        </code>
+        <p>This command deletes a branch on your remote repository.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git push origin : branch_2<br>
+            Username for 'http://github.com': mdnzi<br>
+            Password for 'https://mdnzi@github.com';<br>
+            Everything up-to-date
+        </code>
+      </section>
+      
+      <section class="main-section" id="git_pull">
+        <header>
+          git pull
+        </header>
+        <p>Usage:</p>
+        <code>
+            git pull [Repository Link]
+        </code>
+        <p>This command fetches and merges changes on the remote server to your working directory.</p>
+        <code>
+            username@branch:~/Documents/Repos$ git pull https://github.com/mdnzi/FCC-Technical-Documentation-Page.git<br>
+            warning: no common commits<br>
+            remote: Counting objects: 13, done.<br>
+            remote Compressing objects: 100% (8/8), done.<br>
+            remote: Total 13 (delta 1), reused 10 (delta 1), pack-reused 0<br>
+            Unpacking objects: 100% (13/13), done.<br>
+            From: https://github.com/mdnzi/FCC-Technical-Documentation-Page<br>
+            *branch     HEAD        -> FETCH_HEAD<br>
+            fatal: refusing to merge unrelated histories
+        </code>
+      </section>
+      
+      <section class="main-section" id="git_stash">
+        <header>
+          git stash
+        </header>
+        <p>Usage:</p>
+        <code>
+            git stash save
+        </code>
+        <p>This command temporarily stores all the modified tracked files.</p>
+        <code>
+            username@branch:~/Documents/Repos/TechnicalDocumentationPage$ git stash save<br>
+            Saved working director and index state WIP on branch_2: 5152fcd Index.html updated
+        </code>
+      </section>
+      <section class="main-section" id="references">
+        <header>
+          references
+        </header>
+        <ul class="ref-links">
+          <li><a href="https://git-scm.com/doc" target="_blank"><img src="assets/git-logo.svg" alt=""></a></li>
+          <li><a href="https://github.com/mdnzi" target="_blank"><img src="assets/github-logo.svg" alt=""></a></li>
+          <li><img src="" alt=""></li>
+          <li><img src="" alt=""></li>
+          <li><img src="" alt=""></li>
+        </ul>
+      </section>
+      <button onclick="topFunction()" id="scrollTop" class="scrollBtn">Back to Top</button>
+    </main>
+    <!--Script-->
+    <script src="script/main.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
